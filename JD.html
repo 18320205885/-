@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../jquery-1.12.3.js"></script>
+		<script src="../ajax.js"></script>
+		<script src="../move.js"></script>
+		<link rel="stylesheet" type="text/css" href="JD.css"/>
+		<link rel="stylesheet" type="text/css" href="font_553115_0z4dq0p4ebl0udi/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="font_554420_p2bumr64lr9hpvi/iconfont.css"/>
+	</head>
+	<script>
+		
+		$(function(){
+			//主体部分效果
+			$(".mid ul li").mouseenter(function(){
+				$(this).children(0).css("display","block");
+			})
+			$(".mid ul li").mouseout(function(){
+				$(this).children(0).css("display","none");
+			})
+			$("#list ul li").hover(function(){
+				$("#aaa").show();
+			},function(){
+				$("#aaa").hide();
+			})
+			$("#aaa").hover(function(){
+				$("#aaa").show();
+			},function(){
+				$("#aaa").hide();
+			})
+
+			//轮播图
+			function lunbo(){
+
+				$("#LunBo ul li").eq(0).css("opacity","1");
+				$("#LunBo ul li").eq(0).css("filter",'alpha(opacity=100)');
+				var size1 = $("#LunBo ul li").length;
+				var n1 = 0;
+				var LB = document.getElementById("LunBo");
+				var ul1 = document.getElementById("ul1");
+				var bLi = ul1.getElementsByTagName("li");
+				var timer1 = setInterval(function(){
+					n1++;
+					move();
+//					console.log(n1);
+				},2000);
+				
+				function move(){
+					//左边界
+					if (n1 < 0) {
+						n1 = size1-1;
+					}
+					//右边界
+					else if (n1 >= size1) {
+						n1 = 0;
+					}
+					//动画效果
+					for (var i=0; i<bLi.length; i++) {
+						if (i == n1) {
+							animate(bLi[n1], {"opacity": 100}); //n1显示
+						}
+						else {
+							animate(bLi[i], {"opacity": 0}); //其他隐藏
+						}
+					}
+				}
+				//上一页
+				$("#goleft").click(function(){
+				n1--;
+				move();
+				})
+				//下一页
+				$("#goright").click(function(){
+					n1++;
+					move();
+				})
+				$("#LunBo").mouseenter(function(){
+					clearInterval(timer1);
+				})
+				$("#LunBo").mouseout(function(){
+					clearInterval(timer1);
+					timer1 = setInterval(function(){
+						n1++;
+						move();
+					}, 2000);
+				})
+			}
+			lunbo();
+			//主体其他效果2
+			$("#GuangGao a img ").mouseenter(function(){
+				$(this).css({
+					"width":200,
+					"height":150
+				})
+				
+				
+			})
+			$("#GuangGao a img ").mouseout(function(){
+				$(this).css({
+					"width":184,
+					"height":144
+				})
+				
+				
+			})
+		})
+		
+	</script>
+	<body>
+		<div id="x">
+			<a href="https://sale.jd.com/act/pt5AWzCMxTDgjV.html?cpdad=1DLSUE"><img src="img/5a645b44Nd9e639bf.jpg"/></a>
+		</div>
+		<header id="header">
+			<div class="mid">
+				<span id="where">Location:广东</span>
+				<ul>
+					<li>登录 </li>
+					<li>注册 </li>
+					<li>我的订单 
+						<div></div>
+					</li>
+					<li>我的京东 
+						<div></div>
+					</li>
+					<li>京东会员 
+						<div></div>
+					</li>
+					<li>企业采购 
+						<div></div>
+					</li>
+					<li>客户服务 
+						<div></div>
+					</li>
+					<li>网站导航 
+						<div></div>
+					</li>
+					<li style="border: 0;">手机京东 
+						<div></div>
+					</li>
+				</ul>
+			</div>
+		</header>
+		<div class="body">
+			<div id="box">
+				<div id="search">
+					<div>
+						<input type="search" />
+						<i class="iconfont icon-zhaoxiangji"></i>
+					</div>
+					<input id="sousuo" type="button" value="搜索" />
+					<span id="cart">
+						<i class="iconfont icon-qicheqianlian-"></i>
+						<p>我的购物车</p>
+					</span>
+				</div>
+				<nav>
+					<ul>
+						<b><li>秒杀</li>
+						<li>优惠券</li>
+						<li>PLUS会员</li>
+						<li>闪购</li>
+						<li>拍卖</li>
+						<li>京东服饰</li>
+						<li>京东超市</li>
+						<li>生鲜</li>
+						<li>全球购</li>
+						<li>京东金融</li></b>
+						<a href="https://sale.jd.com/act/G3dfS4Wolbaw5MB.html?cpdad=1DLSUE"><img src="img/5a5f33ffN62577768.jpg"/></a>
+					</ul>
+				</nav>
+				<div id="boxLeft">
+					<div id="logo"><img src="img/5a6498e9N5ef4cde4.gif"/></div>
+					<div id="list">
+						<ul>
+							<li>
+								<span>男装</span>
+								<span>女装</span>
+								<span>童装</span>
+								<span>内衣</span>
+								
+							</li>
+							<li>
+								<span>家居</span>
+								<span>家具</span>
+								<span>家装</span>
+								<span>厨具</span>
+							</li>
+							<li>
+								<span>男装</span>
+								<span>女装</span>
+								<span>童装</span>
+								<span>内衣</span>
+							</li>
+							<li>
+								<span>男装</span>
+								<span>女装</span>
+								<span>童装</span>
+								<span>内衣</span>
+							</li>
+							<li>
+								<span>男装</span>
+								<span>女装</span>
+								<span>童装</span>
+								<span>内衣</span>
+							</li>
+							<li>
+								<span>男装</span>
+								<span>女装</span>
+								<span>童装</span>
+								<span>内衣</span>
+							</li>
+							<li>
+								<span>男装</span>
+								<span>女装</span>
+								<span>童装</span>
+								<span>内衣</span>
+							</li>
+							<li>
+								<span>男装</span>
+								<span>女装</span>
+								<span>童装</span>
+								<span>内衣</span>
+							</li>
+							<li>
+								<span>男装</span>
+								<span>女装</span>
+								<span>童装</span>
+								<span>内衣</span>
+							</li>
+							<li>
+								<span>男装</span>
+								<span>女装</span>
+								<span>童装</span>
+								<span>内衣</span>
+							</li>
+							<li>
+								<span>男装</span>
+								<span>女装</span>
+								<span>童装</span>
+								<span>内衣</span>
+							</li>
+							<li>
+								<span>男装</span>
+								<span>女装</span>
+								<span>童装</span>
+								<span>内衣</span>
+							</li>
+							<li>
+								<span>男装</span>
+								<span>女装</span>
+								<span>童装</span>
+								<span>内衣</span>
+							</li>
+							<li>
+								<span>男装</span>
+								<span>女装</span>
+								<span>童装</span>
+								<span>内衣</span>
+							</li>
+							<li>
+								<span>男装</span>
+								<span>女装</span>
+								<span>童装</span>
+								<span>内衣</span>
+							</li>
+							
+							<li>
+								<span>男装</span>
+								<span>女装</span>
+								<span>童装</span>
+								<span>内衣</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="aaa">
+					<ul id="aaaLeft">
+						<li>厨具 &nbsp;>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+						</li>
+						<li>厨具 &nbsp;>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+						</li>
+						<li>厨具 &nbsp;>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+						</li>
+						<li>厨具 &nbsp;>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+						</li>
+						<li>厨具 &nbsp;>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+						</li>
+						<li>厨具 &nbsp;>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+						</li>
+						<li>厨具 &nbsp;>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+						</li>
+						<li>厨具 &nbsp;>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+						</li>
+						<li>厨具 &nbsp;>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+						</li>
+						<li>厨具 &nbsp;>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+							<span>烹饪厨具</span>
+						</li>
+					</ul>
+					<div id="aaaRight">
+						<img src="img/59f68c9fNfd08897d.jpg"/>
+						<img src="img/5a164421N701376c6.jpg"/>
+						<img src="img/5a0c0158Nc8e75ff3.jpg"/>
+					</div>
+				</div>
+				<div id="LunBo">
+					<ul id="ul1">
+						<li><img src="img/LunBO/5a5dcf5eN33479546.jpg"/></li>
+						<li><img src="img/LunBO/5a614246N57aac761.jpg"/></li>
+						<li><img src="img/LunBO/5a618633Ndb883a40.jpg"/></li>
+						<li><img src="img/LunBO/5a618ee6N1f676cd6.jpg"/></li>
+						<li><img src="img/LunBO/5a61a744Nf98f673f.jpg"/></li>
+						<li><img src="img/LunBO/5a61aae9Nc8a3d56a.jpg"/></li>
+						<li><img src="img/LunBO/5a657936Nacb88638.jpg"/></li>
+						<li><img src="img/LunBO/5a6691aeNa9c4da5e.jpg"/></li>
+					</ul>
+					<div id="goleft"><i class="iconfont icon-zuo"></i></div>
+					<div id="goright"><i class="iconfont icon-you"></i></div>
+				</div>
+				<div id="GuangGao">
+					<a href="https://search.jd.com/Search?keyword=%E5%86%85%E8%A3%A4&enc=utf-8&wq=neiku&pvid=e98fc93ee5654e169ea7caa12304bd8a"><img src="img/111.jpg"/></a>
+					<a href="https://search.jd.com/Search?keyword=%E5%86%85%E8%A3%A4&enc=utf-8&wq=neiku&pvid=e98fc93ee5654e169ea7caa12304bd8a"><img src="img/222.jpg"/></a>
+					<a href="https://search.jd.com/Search?keyword=%E5%86%85%E8%A3%A4&enc=utf-8&wq=neiku&pvid=e98fc93ee5654e169ea7caa12304bd8a"><img src="img/333.jpg"/></a>
+				</div>
+				<div id="DL">
+					<img src="img/微信图片_20180126175246.png"/>
+				</div>
+				<div id="bodyRight"></div>
+				<div id="ShouQi"></div>
+			</div>
+		</div>
+	</body>
+</html>
